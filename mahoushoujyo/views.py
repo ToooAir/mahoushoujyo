@@ -26,13 +26,13 @@ def register(request):
 			messages.error(request,'密碼確認錯誤')
 		else:
 			User.objects.create_user(account,"",password2)
-			return redirect('/mahoushoujyo')
+			return redirect('')
 	return render(request,'register.html')	
 def main(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			logout(request)
-			return redirect('/mahoushoujyo')
+			return redirect('')
 		return render(request,'main.html')	
 	else:
 		return render(request,'404notfound.html')	
@@ -40,7 +40,7 @@ def hide(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			logout(request)
-			return redirect('/mahoushoujyo')
+			return redirect('')
 		return render(request,'hide.html')
 	else:
 		return render(request,'404notfound.html')
@@ -48,7 +48,7 @@ def amplification(request):
 	if request.user.is_authenticated:
 		if request.method =='POST':
 			logout(request)
-			return redirect('/mahoushoujyo')
+			return redirect('')
 		return render(request,'amplification.html')	
 	else:
 		return render(request,'404notfound.html') 		
