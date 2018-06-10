@@ -2,10 +2,10 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login	,logout
 from django.contrib.auth.models import User 
-# import msvcrt
+import msvcrt
 # Create your views here.
 def index(request):
-	return render(request,'mahoushoujyo/index.html')
+	return render(request,'index.html')
 def signin(request):
 	if request.method == 'POST':
 		account = request.POST.get('account')
@@ -16,7 +16,7 @@ def signin(request):
 			return redirect('main')
 		else:
 			return redirect('signin') #question
-	return render(request,'mahoushoujyo/signin.html')
+	return render(request,'signin.html')
 def register(request):
 	if request.method == 'POST':
 		account = request.POST.get('account')
@@ -27,30 +27,30 @@ def register(request):
 		else:
 			User.objects.create_user(account,"",password2)
 			return redirect('/mahoushoujyo')
-	return render(request,'mahoushoujyo/register.html')	
+	return render(request,'register.html')	
 def main(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			logout(request)
 			return redirect('/mahoushoujyo')
-		return render(request,'mahoushoujyo/main.html')	
+		return render(request,'main.html')	
 	else:
-		return render(request,'mahoushoujyo/404notfound.html')	
+		return render(request,'404notfound.html')	
 def hide(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			logout(request)
 			return redirect('/mahoushoujyo')
-		return render(request,'mahoushoujyo/hide.html')
+		return render(request,'hide.html')
 	else:
-		return render(request,'mahoushoujyo/404notfound.html')
+		return render(request,'404notfound.html')
 def amplification(request):
 	if request.user.is_authenticated:
 		if request.method =='POST':
 			logout(request)
 			return redirect('/mahoushoujyo')
-		return render(request,'mahoushoujyo/amplification.html')	
+		return render(request,'amplification.html')	
 	else:
-		return render(request,'mahoushoujyo/404notfound.html') 		
+		return render(request,'404notfound.html') 		
 def notfound(request):
-	return render(request,'mahoushoujyo/404notfound.html')
+	return render(request,'404notfound.html')
