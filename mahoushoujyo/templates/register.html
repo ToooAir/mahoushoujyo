@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+<head>
+	<title>魔法少女サイト</title>
+	<link rel=stylesheet type="text/css" href="{%static 'register.css' %}">
+</head>
+<body>
+<div id="frame">  
+<div id="register">  
+  <div class="register-wrapper">
+    <div class="register-left-left">
+      <img src="{% static 'img/register-role.png' %}">
+    </div>
+    <div class="register-left">
+      <img src="{% static 'img/register-introduction.jpg' %}">
+      <div class="h1">登録</div>
+    </div>
+    <div class="register-right">
+    <form id="form" method="post" action="">
+    	{% csrf_token %}
+      <div class="h2">Register</div>
+      <div class="form-group">
+        <input type="text" id="full-name" name="account" placeholder="Account">
+        <label for="full-name">Account</label>    
+      </div>
+      <div class="form-group">
+        <input type="password" id="apassword" name="password" placeholder="Password">
+        <label for="apassword">Password</label>    
+      </div>
+      <div class="form-group">
+        <input type="password" id="bpassword" name="password2" placeholder="Confirm Password">
+        <label for="bpassword">Confirm Password</label>    
+      </div>
+      <div class="button-area">
+        <button type="submit" id="submit" class="btn btn-primary">Sign Up</button>
+        <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+</div>
+	<script type="text/javascript" src="{%static 'jquery.js' %}"></script>
+	<script type="text/javascript" src="{%static 'register.js' %}"></script>
+</body>
+</html>

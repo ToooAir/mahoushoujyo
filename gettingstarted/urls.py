@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.urls import path
 
 from django.contrib import admin
+from django.conf.urls import url, include
 admin.autodiscover()
 
 import hello.views
@@ -11,6 +12,7 @@ import hello.views
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
+	url(r'^mahoushoujyo/', include('mahoushoujyo.urls')),
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     path('admin/', admin.site.urls),
