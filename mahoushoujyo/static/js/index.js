@@ -68,12 +68,3 @@
         window.location="register";
       })
   });
-
-  var audio = document.createElement("audio");
-  audio.autoplay = true;
-  audio.load();
-  audio.addEventListener("load",function(){
-    audio.currentTime = 0;
-    audio.play();
-  },true);
-  audio.src = "{%static 'music/index.mp3' %}";
