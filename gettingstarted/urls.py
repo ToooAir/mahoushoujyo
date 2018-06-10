@@ -13,7 +13,7 @@ import mahoushoujyo.views
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^$', hello.views.index, name='index'),
+    url(r'^$', mahoushoujyo.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url('admin/', admin.site.urls),
     url(r'^jerry/',include('jerry.urls')),
