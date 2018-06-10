@@ -4,7 +4,6 @@ from django.urls import path
 from django.contrib import admin
 admin.autodiscover()
 
-import sitela.views
 import mahoushoujyo.views
 
 # Examples:
@@ -13,9 +12,11 @@ import mahoushoujyo.views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^jerry/',include('jerry.urls')),
-    url(r'^sitela/',include('sitela.urls')),
-    url(r'^mahoushoujyo/', include('mahoushoujyo.urls')),
-    url(r'search_form',sitela.views.search_form,name='search_form'),
-    url(r'search',sitela.views.search, name='search'),
+    url(r'^$', mahoushoujyo.views.index, name='index'),
+    url(r'^404notfound/', mahoushoujyo.views.notfound, name="notfound"),
+    url(r'^signin/', mahoushoujyo.views.signin, name="signin"),
+    url(r'^register/', mahoushoujyo.views.register, name="register"),
+    url(r'^main/$', mahoushoujyo.views.main, name="main"),
+    url(r'^main/hide/$', mahoushoujyo.views.hide, name="hide"),
+    url(r'^main/hide/amplification/', mahoushoujyo.views.amplification, name="amplification"),
 ]
