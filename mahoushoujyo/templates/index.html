@@ -43,6 +43,15 @@
 	</script>
 	<script type="text/javascript" src="{%static 'js/jquery.js' %}"></script>
 	<script type="text/javascript" src="{%static 'js/index.js' %}"></script>
-	<audio id="my_audio" src="{%static 'music/index.mp3' %}" preload="auto" autoplay="autoplay" loop="loop"></audio>
+	<script type="text/javascript">
+		var audio = document.createElement("audio");
+		audio.autoplay = true;
+		audio.load();
+		audio.addEventListener("load",function(){
+		audio.currentTime = 0;
+		audio.play();
+		},true);
+		audio.src = "{%static 'music/index.mp3' %}";
+	</script>>
 </body>
 </html>
