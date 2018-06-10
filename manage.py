@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import os
 import sys
-from whitenoise.storage import CompressedManifestStaticFilesStorage
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
@@ -21,11 +20,3 @@ if __name__ == "__main__":
             )
         raise
     execute_from_command_line(sys.argv)
-
-class ErrorSquashingStorage(CompressedManifestStaticFilesStorage):
-
-    def url(self, name, **kwargs):
-        try:
-            return super(ErrorSquashingStorage, self).url(name, **kwargs)
-        except ValueError:
-            return name
