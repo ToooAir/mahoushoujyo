@@ -6,6 +6,7 @@ admin.autodiscover()
 
 import hello.views
 import sitela.views
+import mahoushoujyo.views
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
@@ -17,6 +18,7 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^jerry/',include('jerry.urls')),
     url(r'^sitela/',include('sitela.urls')),
+    url(r'^mahoushoujyo/', include('mahoushoujyo.urls')),
     url(r'search_form',sitela.views.search_form,name='search_form'),
     url(r'search',sitela.views.search, name='search'),
 ]

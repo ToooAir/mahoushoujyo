@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+	<title>魔法少女サイト</title>
+	<link rel=stylesheet type="text/css" href="{%static 'signin.css' %}">
+</head>
+<body>
+	<div class="wrapper">
+		<img src="{% static 'img/black.jpg' %}" id="black"></img>
+		<div class="container" style="display:none" id="container">
+			<h1 id="text">Sign in</h1>
+			<form  class="form" id="form" method="post" action="">
+			{% csrf_token %}
+        	<input  type="text" id="account" name="account" placeholder="Account">
+        	<input  type="Password" id="password" name="password" placeholder="Password">
+			<button id="login-button"  type="submit" >Login</button>
+			<button type="button" onclick="history.back()">Cancel</button>
+			</form>
+		</div>
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="{%static 'jquery.js' %}"></script>
+	<script type="text/javascript" src="{%static 'signin.js' %}"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+ 			$('#black').fadeOut(1500);
+ 			setTimeout("$('#container').fadeIn(1500)",1500)
+ 		})
+ 	</script>
+	</body>
+</html>
