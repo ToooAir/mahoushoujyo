@@ -113,7 +113,7 @@
     
     var diff = new Date(Count);
     var seconds = (diff.getTime()-diff.getMilliseconds())/1000; 
-    var milliSeconds = (diff.getMilliseconds()/10).toFixed(0);
+    var milliSeconds = ("0" + diff.getTime()).substr(-3);
     
     if (diff.getTime() <= 0) {
         clearInterval(counter);
@@ -122,7 +122,6 @@
     }
     
     var seconds = seconds < 10 ? "0" + seconds: seconds;
-    var milliSeconds = milliSeconds < 10 ? "0" + milliSeconds: milliSeconds;
     document.getElementById('seconds').innerHTML = seconds+","+milliSeconds;
     // document.getElementById('seconds').innerHTML = seconds+","+milliSeconds+" Seconds"; // watch for spelling
     }
